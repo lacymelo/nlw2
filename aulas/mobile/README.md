@@ -22,11 +22,16 @@ Instalando a biblioteca nativa do navegador da pilha
 
 Para navegação entre tabs
 ### yarn add @react-navigation/bottom-tabs
-ya
+
 Para utilizar select
 ### expo install @react-native-picker/picker
 
 Para chamadas API
 ### yarn add axios
+
+Para utilizar armazenamento local do dispositivo
+### expo install @react-native-async-storage/async-storage
+
+
 
 

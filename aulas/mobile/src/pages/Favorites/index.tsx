@@ -1,11 +1,34 @@
-import React from "react";
-import { Text, View, ScrollView } from "react-native";
+import React, { useState, useEffect } from "react";
+import { useFocusEffect } from "@react-navigation/native";
+import { View, ScrollView } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import PageHeader from "../../components/PageHeader";
 
 import styles from "./styles";
-import TeacherItem from "../../components/TeacherItem";
+import TeacherItem, { Teacher } from "../../components/TeacherItem";
 
 const Favorites = () => {
+    const [favorites, setFavorites] = useState([]);
+
+    function loadFavorites(){
+        AsyncStorage.getItem('favorites').then(response => {
+            if(response){
+                const favoritedTeacher = JSON.parse(response);
+
+                //realiza a validação e remove elemento vazios
+                const favoriteArray = favoritedTeacher.filter((teacher: Teacher) => {
+                    return teacher.id;
+                })
+ 
+                setFavorites(favoriteArray);
+            }
+        });
+    }
+
+    useFocusEffect(() => {
+        loadFavorites();
+    });
+
     return(
         <>
             <View style={styles.container}>
@@ -20,9 +43,14 @@ const Favorites = () => {
                     paddingBottom: 16
                 }}
             >
-                <TeacherItem />
-                <TeacherItem />
-                <TeacherItem />
+            {
+                favorites.map((teacher: Teacher) => (
+                    <TeacherItem 
+                        key={teacher.id}
+                        teacher={teacher}
+                        favorited />
+                ))
+            }
 
             </ScrollView>
         </>

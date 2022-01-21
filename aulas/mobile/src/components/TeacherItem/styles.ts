@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
         color: '#32264d',
         fontSize: 20,
         marginTop: 4,
+        width: 180,
     },
 
     subject: {
