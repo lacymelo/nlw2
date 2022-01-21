@@ -18,7 +18,7 @@
 <br>
 
 <p align="center">
-  <img alt="Proffy" src=".github/proffy.png" width="100%">
+  <img alt="Proffy" src="https://github.com/rocketseat-education/nlw-02-omnistack/blob/master/.github/proffy.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
