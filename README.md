@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Proffy" title="Proffy" src=".github/logo.svg" />
+    <img alt="Proffy" title="Proffy" src="https://github.com/lacymelo/nlw2/blob/main/aulas/web/src/assets/images/logo.svg" />
 </h1>
 
 <p align="center">
